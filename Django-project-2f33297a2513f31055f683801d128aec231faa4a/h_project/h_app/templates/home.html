@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | RoyalStays</title>
+  <link rel="stylesheet" href="static/base.css" />
+</head>
+<body>
+<header>
+  <nav class="main-nav">
+    <input type="checkbox" id="check" />
+    <label for="check" class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <a href="/" class="logo">RoyalStays</a>
+    <ul class="navlinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About us</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/register" class="contact">Register</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+{% block body %}
+<div class="slides">
+  <img class="mySlides" src="https://cdn.pixabay.com/photo/2017/08/02/18/14/architecture-2572715__480.jpg">
+  <img class="mySlides" src="https://cdn.pixabay.com/photo/2016/10/13/09/08/travel-1737172__480.jpg">
+  <img class="mySlides" src="https://cdn.pixabay.com/photo/2021/02/03/00/10/receptionists-5975962__480.jpg">
+  <img class="mySlides" src="https://cdn.pixabay.com/photo/2018/11/09/12/58/furniture-3804533__480.jpg">
+  <img class="mySlides" src="https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406__480.jpg">
+  <img class="mySlides" src="https://cdn.pixabay.com/photo/2020/04/16/13/42/chair-5050672__480.jpg">
+  <img class="mySlides" src="https://cdn.pixabay.com/photo/2017/06/18/20/50/view-2417156__480.jpg">
+</div>
+<div class="points">
+    <ul>
+        <li>Soothing Ambience</li>
+        <li>Great Hospitality</li>
+        <li>Sea View</li>
+        <li>Reasonable Rates</li>
+        <li>Fast Process</li>
+        <li>Zero Regrets</li>
+    </ul>
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+{% endblock body %}
+</body>
+</html>

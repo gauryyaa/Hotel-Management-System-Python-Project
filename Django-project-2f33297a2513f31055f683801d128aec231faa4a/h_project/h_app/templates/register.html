@@ -1,0 +1,57 @@
+{% extends 'home.html' %}
+{% block body %}
+
+<style>
+    h1{color:skyblue; text-align:center}
+    .details{background-color: #474e5d;}
+</style>
+
+<div class="regimg" align="center">
+    <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704__480.jpg" width="800px" height="300px">
+</div>
+<h1>Register Details</h1>
+<div class="details" align="center">
+<form method="POST" action="/register">
+{%  csrf_token %}
+	<fieldset>
+	<legend><em>Personal Details</em></legend>
+
+<p>
+    <label>Full name: <input name="name" /></label>
+</p>
+<p>
+    <label>Email:<input type="email" name="email" /></label>
+</p>
+<p>
+    <label>Phone:<input type="number" name="phone" /></label>
+</p>
+<p>
+    <label>Aadhaar number: <input type="number" name="aadhaar" /></label>
+</p>
+    </fieldset>
+    <fieldset>
+        <legend><em>Booking Details</em></legend>
+<p>
+    <label>Rooms type:
+        <select name="room">
+			<option>--None--</option>
+			<option>Single</option>
+			<option>Couple</option>
+			<option>Deluxe</option>
+			<option>Luxury</option>
+			<option>Royal</option>
+		</select>
+	</label>
+</p>
+<p>
+<label>No. of Days: <input type="number" name="days"></label>
+</p>
+<p>
+    <button type="submit">Submit</button>
+</p>
+
+    </fieldset>
+</form>
+</div>
+
+{% endblock body %}
